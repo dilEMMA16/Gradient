@@ -1,5 +1,37 @@
 .App {
-  text-align: center;
+  text-align: left;
+  padding: 50px;
+  height: 100vh;
+  width: 100vw;
+}
+
+#switchGradientButton {
+    margin-top: 5vh;
+    padding: 10px 20px;
+    border: 3px solid white;
+    color: white;
+    background-color: Transparent;
+    font-weight: 700;
+    font-size: 1.5em;
+    text-align: left !important;
+    min-width: 30vw;
+    transition: 0.4s;
+    cursor: pointer;
+}
+
+#switchGradientButton:hover {
+    background-color: white;
+    color: #c8c8c8;
+}
+
+
+#colorsUsed {
+    color: white;
+    padding: 20px 20px;
+    border-left: 3px solid white;
+    font-size: .75em;
+    max-width: 20vw;
+    font-weight: bold;
 }
 
 .App-logo {
