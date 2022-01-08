@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/gradient/static/css/main.073c9b0a.css",
+    "main.js": "/gradient/static/js/main.85f70990.js",
+    "static/js/787.37d242dd.chunk.js": "/gradient/static/js/787.37d242dd.chunk.js",
+    "static/media/logo.svg": "/gradient/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
+    "index.html": "/gradient/index.html",
+    "main.073c9b0a.css.map": "/gradient/static/css/main.073c9b0a.css.map",
+    "main.85f70990.js.map": "/gradient/static/js/main.85f70990.js.map",
+    "787.37d242dd.chunk.js.map": "/gradient/static/js/787.37d242dd.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.073c9b0a.css",
+    "static/js/main.85f70990.js"
+  ]
+}
