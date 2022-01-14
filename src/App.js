@@ -3,14 +3,14 @@ import { useState, useCallback } from 'react'
 
 function App() {
   const [gradient, setGradient] = useState({
-    color1: 'red',
-    color2: 'green',
-    color3: 'blue',
-    degrees: 0
+    color1: 'rgb(255,0,0)',
+    color2: 'rgb(0,255,0)',
+    color3: 'rgb(0,0,255)',
+    degrees: 180
   })
   const [gradientStyles, setGradientStyles] = useState({
-    backgroundColor: 'red',
-    backgroundImage: `linear-gradient(180deg, red 0%, green 50%, blue 100%)`,
+    backgroundColor: 'rgb(255,0,0)',
+    backgroundImage: `linear-gradient(180deg, rgb(255,0,0) 0%, rgb(0,255,0) 50%, rgb(0,0,255) 100%)`,
   })
 
   const getNewGradient = () => {
@@ -46,6 +46,13 @@ function App() {
     setGradient(copyOfGradient)
   },[gradient, setGradient])
 
+  const copyColorToClipboard = (color) => {
+      navigator.clipboard.writeText(color)
+  }
+ 
+
+
+
   return (
     <div className="App" style={{backgroundColor: gradient.color1,
     backgroundImage: `linear-gradient(${gradient.degrees}deg, ${gradient.color1} 0%, ${gradient.color2} 50%, ${gradient.color3} 100%)`,}}>
@@ -53,10 +60,10 @@ function App() {
           switch it up
       </button>
       <div id="colorsUsed">
-        <p>{gradient.color1}</p>
-        <p>{gradient.color2}</p>
-        <p>{gradient.color3}</p>
-        <p>{gradient.degrees} &#176;</p>
+        <p style={{minHeight: '20px', padding: '10px', textAlign: 'center', backgroundColor: gradient.color1}}>{gradient.color1} <i class="far fa-clipboard"></i></p>
+        <p style={{minHeight: '20px', padding: '10px', textAlign: 'center', backgroundColor: gradient.color2}}>{gradient.color2}</p>
+        <p style={{minHeight: '20px', padding: '10px', textAlign: 'center', backgroundColor: gradient.color3}}>{gradient.color3}</p>
+        <p style={{fontSize: '24px'}}>{gradient.degrees} &#176;</p>
       </div>
       <p>Background color: {gradientStyles.backgroundColor}</p>
       <p>Background image: {`linear-gradient(${gradient.degrees}deg, ${gradient.color1} 0%, ${gradient.color2} 50%, ${gradient.color3} 100%)`}</p>
