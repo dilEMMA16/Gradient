@@ -1,6 +1,9 @@
 import './App.css';
 import { useState, useCallback } from 'react'
 import {ColorCard} from './ColorCard';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faCopy } from '@fortawesome/free-regular-svg-icons'
+import { CopyToClipboard } from "react-copy-to-clipboard";
 
 function App() {
   const [gradient, setGradient] = useState({
@@ -9,6 +12,8 @@ function App() {
     color3: 'rgb(0,0,255)',
     degrees: 180
   })
+  	const [isCopied, setIsCopied] = useState(false)
+
   const [gradientStyles, setGradientStyles] = useState({
     backgroundColor: 'rgb(255,0,0)',
     backgroundImage: `linear-gradient(180deg, rgb(255,0,0) 0%, rgb(0,255,0) 50%, rgb(0,0,255) 100%)`,
@@ -47,10 +52,12 @@ function App() {
     setGradient(copyOfGradient)
   },[gradient, setGradient])
 
-  const copyColorToClipboard = (color) => {
-      navigator.clipboard.writeText(color)
-  }
- 
+ const onCopyText = () => {
+    setIsCopied(true);
+    setTimeout(() => {
+      setIsCopied(false);
+    }, 1000);
+  };
 
 
 
@@ -72,7 +79,17 @@ function App() {
         <button id="62deg" className={gradient.degrees === 62 ? 'circleButton active ' : 'circleButton'} onClick={() => handleDegreeChange(62)}>62 &#176;</button>
       </div>
       <div className="gradient_code">
-        <p>background-color: {gradientStyles.backgroundColor}</p>
+      		<CopyToClipboard text={"code"} onCopy={onCopyText}>
+
+		<button class="copyIcon" style={{color: 'white', backgroundColor: 'transparent', marginLeft: '5px',marginTop:'10px',border:'none',borderRadius: '20px', float:'right'}}>
+		    <FontAwesomeIcon icon={faCopy} style={{marginRight: '2px', fontSize: '1.4em'}} />
+			
+			
+		</button>
+	 </CopyToClipboard>
+	 {isCopied && (<p style={{marginTop:'0', color: 'white', display: 'inline',fontFamily:"arial", marginTop: '15px',float:'right'}}>copied!</p>)}
+     <p>// CSS</p>   
+     <p>background-color: {gradientStyles.backgroundColor}</p>
         <p>background-image: {`linear-gradient(${gradient.degrees}deg, ${gradient.color1} 0%, ${gradient.color2} 50%, ${gradient.color3} 100%)`}</p>
       </div>
       </div>
