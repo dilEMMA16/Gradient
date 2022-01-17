@@ -1,5 +1,6 @@
 import './App.css';
 import { useState, useCallback } from 'react'
+import {ColorCard} from './ColorCard';
 
 function App() {
   const [gradient, setGradient] = useState({
@@ -56,21 +57,24 @@ function App() {
   return (
     <div className="App" style={{backgroundColor: gradient.color1,
     backgroundImage: `linear-gradient(${gradient.degrees}deg, ${gradient.color1} 0%, ${gradient.color2} 50%, ${gradient.color3} 100%)`,}}>
-      <button id="switchGradientButton" onClick={getNewGradient}>
+    <div id="contentDiv"> 
+        <button id="switchGradientButton" onClick={getNewGradient}>
           switch it up
       </button>
-      <div id="colorsUsed">
-        <p style={{minHeight: '20px', padding: '10px', textAlign: 'center', backgroundColor: gradient.color1}}>{gradient.color1} <i class="far fa-clipboard"></i></p>
-        <p style={{minHeight: '20px', padding: '10px', textAlign: 'center', backgroundColor: gradient.color2}}>{gradient.color2}</p>
-        <p style={{minHeight: '20px', padding: '10px', textAlign: 'center', backgroundColor: gradient.color3}}>{gradient.color3}</p>
-        <p style={{fontSize: '24px'}}>{gradient.degrees} &#176;</p>
+      <div id="colorsUsedDiv">
+        <ColorCard backgroundColorCode={gradient.color1}/>
+        <ColorCard backgroundColorCode={gradient.color2}/>
+        <ColorCard backgroundColorCode={gradient.color3}/>
       </div>
-      <p>Background color: {gradientStyles.backgroundColor}</p>
-      <p>Background image: {`linear-gradient(${gradient.degrees}deg, ${gradient.color1} 0%, ${gradient.color2} 50%, ${gradient.color3} 100%)`}</p>
-      <div>
-        <button id="180deg" onClick={() => handleDegreeChange(180)}>180 degrees</button>
-        <button id="90deg" onClick={() => handleDegreeChange(90)}>90 degrees</button>
-        <button id="62deg" onClick={() => handleDegreeChange(62)}>62 degrees</button>
+      <div id="degreesDiv">
+        <button id="180deg" className={gradient.degrees === 180 ? 'circleButton active ' : 'circleButton'} onClick={() => handleDegreeChange(180)}>180 &#176;</button>
+        <button id="90deg" className={gradient.degrees === 90 ? 'circleButton active ' : 'circleButton'} onClick={() => handleDegreeChange(90)}>90 &#176;</button>
+        <button id="62deg" className={gradient.degrees === 62 ? 'circleButton active ' : 'circleButton'} onClick={() => handleDegreeChange(62)}>62 &#176;</button>
+      </div>
+      <div className="gradient_code">
+        <p>background-color: {gradientStyles.backgroundColor}</p>
+        <p>background-image: {`linear-gradient(${gradient.degrees}deg, ${gradient.color1} 0%, ${gradient.color2} 50%, ${gradient.color3} 100%)`}</p>
+      </div>
       </div>
     </div>
   );
