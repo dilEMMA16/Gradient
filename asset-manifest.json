@@ -1,15 +1,20 @@
 {
   "files": {
-    "main.css": "/gradient/static/css/main.ff671eac.css",
-    "main.js": "/gradient/static/js/main.319c3c8a.js",
+    "main.css": "/gradient/static/css/main.9cb189bf.css",
+    "main.js": "/gradient/static/js/main.28cc8928.js",
     "static/js/787.37d242dd.chunk.js": "/gradient/static/js/787.37d242dd.chunk.js",
+    "static/media/coolvetica-rg.otf": "/gradient/static/media/coolvetica-rg.b9d8a93dec08b0ae6c19.otf",
+    "static/media/J-airplane-swash-font.ttf": "/gradient/static/media/J-airplane-swash-font.e50409c77ed0eaf66286.ttf",
+    "static/media/assox-Regular.ttf": "/gradient/static/media/assox-Regular.6c848fbdb6fe722d3ebb.ttf",
+    "static/media/MachinklyFree.ttf": "/gradient/static/media/MachinklyFree.498c229b8f776cc49e5c.ttf",
+    "static/media/Peasone.otf": "/gradient/static/media/Peasone.e661e6b9b1f4c8745d25.otf",
     "index.html": "/gradient/index.html",
-    "main.ff671eac.css.map": "/gradient/static/css/main.ff671eac.css.map",
-    "main.319c3c8a.js.map": "/gradient/static/js/main.319c3c8a.js.map",
+    "main.9cb189bf.css.map": "/gradient/static/css/main.9cb189bf.css.map",
+    "main.28cc8928.js.map": "/gradient/static/js/main.28cc8928.js.map",
     "787.37d242dd.chunk.js.map": "/gradient/static/js/787.37d242dd.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.ff671eac.css",
-    "static/js/main.319c3c8a.js"
+    "static/css/main.9cb189bf.css",
+    "static/js/main.28cc8928.js"
   ]
 }
