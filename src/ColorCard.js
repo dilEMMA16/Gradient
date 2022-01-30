@@ -1,34 +1,19 @@
 import { CopyButton } from "./CopyButton";
+import {
+  ColorCardOuterDiv,
+  ColorCardColoredDiv,
+  ColorCardRGBDiv,
+} from "./styles";
 
 export const ColorCard = (params) => {
   const { backgroundColorCode } = params;
 
   return (
-    <div style={{ minHeight: "100px", margin: "10px" }}>
-      <div
-        className="colorDiv"
-        style={{
-          backgroundColor: backgroundColorCode,
-          height: "70px",
-          border: "3px solid white",
-        }}
-      >
-        {" "}
+    <ColorCardOuterDiv>
+      <ColorCardColoredDiv fill={backgroundColorCode}>
         <CopyButton contentToCopy={backgroundColorCode} />
-      </div>
-      <div
-        style={{
-          boxShadow: " 0 4px 8px 0 rgba(0,0,0,0.2)",
-          backgroundColor: "white",
-          height: "30px",
-          color: "black",
-          paddingLeft: "8px",
-          paddingRight: "8px",
-          paddingTop: "5px",
-        }}
-      >
-        {backgroundColorCode}
-      </div>
-    </div>
+      </ColorCardColoredDiv>
+      <ColorCardRGBDiv>{backgroundColorCode}</ColorCardRGBDiv>
+    </ColorCardOuterDiv>
   );
 };

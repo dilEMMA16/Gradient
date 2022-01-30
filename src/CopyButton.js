@@ -2,12 +2,16 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCopy } from "@fortawesome/free-regular-svg-icons";
 import { CopyToClipboard } from "react-copy-to-clipboard";
 import { useState } from "react";
+import {
+  CopyButtonOuterDiv,
+  CopyButtonActualButton,
+  CopyButtonIcon,
+} from "./styles";
 
 export const CopyButton = (props) => {
   const { contentToCopy } = props;
   const [isCopied, setIsCopied] = useState(false);
 
-  console.log(isCopied);
   const onCopyText = () => {
     setIsCopied(true);
     setTimeout(() => {
@@ -16,24 +20,13 @@ export const CopyButton = (props) => {
   };
 
   return (
-    <div style={{ paddingTop: "10px", textAlign: "center" }}>
+    <CopyButtonOuterDiv>
       <CopyToClipboard text={contentToCopy} onCopy={onCopyText}>
-        <button
-          class="copyIcon"
-          style={{
-            color: "white",
-            backgroundColor: "transparent",
-            border: "none",
-            borderRadius: "20px",
-          }}
-        >
-          <FontAwesomeIcon
-            icon={faCopy}
-            style={{ marginRight: "2px", fontSize: "1.4em" }}
-          />
-        </button>
+        <CopyButtonActualButton>
+          <CopyButtonIcon icon={faCopy} />
+        </CopyButtonActualButton>
       </CopyToClipboard>
       {isCopied && <p style={{ marginTop: "0" }}>copied!</p>}
-    </div>
+    </CopyButtonOuterDiv>
   );
 };

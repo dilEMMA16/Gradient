@@ -1,28 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap");
 
 @font-face {
-  font-family: "Peasone";
-  src: local("Peasone"), url(./Peasone.otf) format("opentype");
-  /* other formats include: 'woff2', 'truetype, 'opentype',
-                            'embedded-opentype', and 'svg' */
-}
-
-@font-face {
-  font-family: "MachinklyFree";
-  src: local("MachinklyFree"), url(./MachinklyFree.ttf) format("truetype");
-  /* other formats include: 'woff2', 'truetype, 'opentype',
-                            'embedded-opentype', and 'svg' */
-}
-
-@font-face {
-  font-family: "J-airplane-swash-font";
-  src: local("J-airplane-swash-font"),
-    url(./J-airplane-swash-font.ttf) format("truetype");
-  /* other formats include: 'woff2', 'truetype, 'opentype',
-                            'embedded-opentype', and 'svg' */
-}
-
-@font-face {
   font-family: "assox-Regular";
   src: local("assox-Regular"), url(./assox-Regular.ttf) format("truetype");
   /* other formats include: 'woff2', 'truetype, 'opentype',
@@ -35,76 +13,6 @@
                             'embedded-opentype', and 'svg' */
 }
 
-.App {
-  text-align: left;
-  height: 100vh;
-  width: 100vw;
-}
-
-#contentDiv {
-  padding: 50px;
-}
-
-#switchGradientButton {
-  margin-top: 5vh;
-  padding: 10px 20px;
-  border: 3px solid white;
-  color: white;
-  background-color: Transparent;
-  font-weight: 700;
-  font-size: 3em;
-  text-align: left !important;
-  min-width: 30vw;
-  transition: 0.4s;
-  cursor: pointer;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-
-  font-family: "Peasone";
-  font-family: "MachinklyFree";
-  font-family: "J-airplane-swash-font";
-  font-family: "assox-Regular";
-}
-
-#switchGradientButton:hover,
-.circleButton:hover {
-  background-color: white;
-  color: black;
-}
-
-.gradient_code {
-  background-color: black;
-  font-family: "Courier New";
-  color: #7cfc00;
-  padding: 10px 30px;
-  margin: 20px 0;
-  max-width: 500px;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-}
-
-.colorDiv button {
-  visibility: hidden;
-}
-
-.colorDiv:hover button {
-  visibility: visible;
-}
-
-.circleButton {
-  height: 80px;
-  width: 80px;
-  border-radius: 60px;
-  background-color: Transparent;
-  color: white;
-  text-align: center;
-  font-size: 20px;
-  margin-right: 10px;
-  border: 3px solid white;
-  cursor: pointer;
-  transition: 0.4s;
-  font-family: "coolvetica-rg";
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-}
-
 .active {
   background-color: white;
   color: black;
@@ -112,30 +20,4 @@
 
 .active:hover {
   filter: brightness(0.8);
-}
-
-#colorsUsedDiv {
-  color: white;
-  padding: 20px 20px;
-  border-left: 3px solid white;
-  font-size: 1em;
-  display: flex;
-  font-family: "coolvetica-rg";
-}
-
-#degreesDiv {
-  position: absolute;
-  bottom: 50px;
-  right: 50px;
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }

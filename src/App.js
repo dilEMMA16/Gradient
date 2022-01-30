@@ -4,18 +4,30 @@ import { ColorCard } from "./ColorCard";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCopy } from "@fortawesome/free-regular-svg-icons";
 import { CopyToClipboard } from "react-copy-to-clipboard";
+import {
+  AppOuterDiv,
+  CopyText,
+  AppCopyButtonActualButton,
+  AppGradientCodeDiv,
+  AppDegreesButton,
+  AppDegreesDiv,
+  AppContentDiv,
+  AppColorsUsedDiv,
+  AppSwitchItUpButton,
+  CopyButtonIcon,
+} from "./styles";
 
 function App() {
   const [gradient, setGradient] = useState({
-    color1: "rgb(255,0,0)",
-    color2: "rgb(0,255,0)",
-    color3: "rgb(0,0,255)",
+    color1: "rgb(255, 0, 0)",
+    color2: "rgb(0, 255, 0)",
+    color3: "rgb(0, 0, 255)",
     degrees: 180,
   });
   const [isCopied, setIsCopied] = useState(false);
 
   const [gradientStyles, setGradientStyles] = useState({
-    backgroundColor: "rgb(255,0,0)",
+    backgroundColor: "rgb(255, 0, 0)",
     backgroundImage: `linear-gradient(180deg, rgb(255,0,0) 0%, rgb(0,255,0) 50%, rgb(0,0,255) 100%)`,
   });
 
@@ -32,9 +44,9 @@ function App() {
     let blue2nd = Math.floor(Math.random() * 255);
     let blue3rd = Math.floor(Math.random() * 255);
 
-    let color1 = "rgb(" + red1st + "," + green1st + "," + blue1st + ")";
-    let color2 = "rgb(" + red2nd + "," + green2nd + "," + blue2nd + ")";
-    let color3 = "rgb(" + red3rd + "," + green3rd + "," + blue3rd + ")";
+    let color1 = "rgb(" + red1st + ", " + green1st + ", " + blue1st + ")";
+    let color2 = "rgb(" + red2nd + ", " + green2nd + ", " + blue2nd + ")";
+    let color3 = "rgb(" + red3rd + ", " + green3rd + ", " + blue3rd + ")";
 
     setGradient({
       color1: color1,
@@ -65,94 +77,59 @@ function App() {
   };
 
   return (
-    <div
-      className="App"
-      style={{
-        backgroundColor: gradient.color1,
-        backgroundImage: `linear-gradient(${gradient.degrees}deg, ${gradient.color1} 0%, ${gradient.color2} 50%, ${gradient.color3} 100%)`,
-      }}
+    <AppOuterDiv
+      fill={gradient.color1}
+      image={`linear-gradient(${gradient.degrees}deg, ${gradient.color1} 0%, ${gradient.color2} 50%, ${gradient.color3} 100%)`}
     >
-      <div id="contentDiv">
-        <button id="switchGradientButton" onClick={getNewGradient}>
+      <AppContentDiv>
+        <AppSwitchItUpButton onClick={getNewGradient}>
           switch it up
-        </button>
-        <div id="colorsUsedDiv">
+        </AppSwitchItUpButton>
+        <AppColorsUsedDiv>
           <ColorCard backgroundColorCode={gradient.color1} />
           <ColorCard backgroundColorCode={gradient.color2} />
           <ColorCard backgroundColorCode={gradient.color3} />
-        </div>
-        <div id="degreesDiv">
-          <button
-            id="180deg"
-            className={
-              gradient.degrees === 180 ? "circleButton active " : "circleButton"
-            }
+        </AppColorsUsedDiv>
+        <AppDegreesDiv>
+          <AppDegreesButton
+            className={gradient.degrees === 180 ? "active " : undefined}
             onClick={() => handleDegreeChange(180)}
           >
             180 &#176;
-          </button>
-          <button
-            id="90deg"
-            className={
-              gradient.degrees === 90 ? "circleButton active " : "circleButton"
-            }
+          </AppDegreesButton>
+          <AppDegreesButton
+            className={gradient.degrees === 90 ? "active " : undefined}
             onClick={() => handleDegreeChange(90)}
           >
             90 &#176;
-          </button>
-          <button
-            id="62deg"
-            className={
-              gradient.degrees === 62 ? "circleButton active " : "circleButton"
-            }
+          </AppDegreesButton>
+          <AppDegreesButton
+            className={gradient.degrees === 62 ? "active " : undefined}
             onClick={() => handleDegreeChange(62)}
           >
             62 &#176;
-          </button>
-        </div>
-        <div className="gradient_code">
+          </AppDegreesButton>
+        </AppDegreesDiv>
+        <AppGradientCodeDiv>
           <CopyToClipboard text={"code"} onCopy={onCopyText}>
-            <button
-              class="copyIcon"
-              style={{
-                color: "white",
-                backgroundColor: "transparent",
-                marginLeft: "5px",
-                marginTop: "10px",
-                border: "none",
-                borderRadius: "20px",
-                float: "right",
-              }}
-            >
-              <FontAwesomeIcon
-                icon={faCopy}
-                style={{ marginRight: "2px", fontSize: "1.4em" }}
-              />
-            </button>
+            <AppCopyButtonActualButton>
+              <CopyButtonIcon icon={faCopy} />
+            </AppCopyButtonActualButton>
           </CopyToClipboard>
-          {isCopied && (
-            <p
-              style={{
-                marginTop: "0",
-                color: "white",
-                display: "inline",
-                fontFamily: "arial",
-                marginTop: "15px",
-                float: "right",
-              }}
-            >
-              copied!
-            </p>
-          )}
+          {isCopied && <CopyText>copied!</CopyText>}
           <p>// CSS</p>
-          <p>background-color: {gradientStyles.backgroundColor}</p>
           <p>
-            background-image:{" "}
-            {`linear-gradient(${gradient.degrees}deg, ${gradient.color1} 0%, ${gradient.color2} 50%, ${gradient.color3} 100%)`}
+            <code>background-color: {gradientStyles.backgroundColor}</code>
           </p>
-        </div>
-      </div>
-    </div>
+          <p>
+            <code>
+              background-image:{" "}
+              {`linear-gradient(${gradient.degrees}deg, ${gradient.color1} 0%, ${gradient.color2} 50%, ${gradient.color3} 100%)`}
+            </code>
+          </p>
+        </AppGradientCodeDiv>
+      </AppContentDiv>
+    </AppOuterDiv>
   );
 }
 
