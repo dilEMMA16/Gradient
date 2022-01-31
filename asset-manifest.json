@@ -1,17 +1,17 @@
 {
   "files": {
     "main.css": "/gradient/static/css/main.4298f717.css",
-    "main.js": "/gradient/static/js/main.fd5047ad.js",
+    "main.js": "/gradient/static/js/main.7511d42c.js",
     "static/js/787.37d242dd.chunk.js": "/gradient/static/js/787.37d242dd.chunk.js",
     "static/media/coolvetica-rg.otf": "/gradient/static/media/coolvetica-rg.b9d8a93dec08b0ae6c19.otf",
     "static/media/assox-Regular.ttf": "/gradient/static/media/assox-Regular.6c848fbdb6fe722d3ebb.ttf",
     "index.html": "/gradient/index.html",
     "main.4298f717.css.map": "/gradient/static/css/main.4298f717.css.map",
-    "main.fd5047ad.js.map": "/gradient/static/js/main.fd5047ad.js.map",
+    "main.7511d42c.js.map": "/gradient/static/js/main.7511d42c.js.map",
     "787.37d242dd.chunk.js.map": "/gradient/static/js/787.37d242dd.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.4298f717.css",
-    "static/js/main.fd5047ad.js"
+    "static/js/main.7511d42c.js"
   ]
 }
