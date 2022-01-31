@@ -10,7 +10,7 @@ export const ColorCardColoredDiv = styled.div`
   background-color: ${(props) => props.fill};
   height: 70px;
   border: 3px solid white;
-  width: 120px;
+  min-width: 120px;
 
   button {
     visibility: hidden;
@@ -20,6 +20,7 @@ export const ColorCardColoredDiv = styled.div`
     visibility: visible;
   }
 `;
+
 export const ColorCardRGBDiv = styled.div`
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   background-color: white;
@@ -67,7 +68,7 @@ export const CopyText = styled.p`
 
 export const AppOuterDiv = styled.div`
   text-align: left;
-  height: 100vh;
+  min-height: 100vh;
   width: 100vw;
   background-color: ${(props) => props.fill};
   background-image: ${(props) => props.image};
@@ -104,12 +105,22 @@ export const AppColorsUsedDiv = styled.div`
   font-size: 1em;
   display: flex;
   font-family: "coolvetica-rg";
+  flex-direction: column;
+  justify-content: flex-start;
+
+  @media (min-width: 500px) {
+      flex-direction:row;
+    }
 `;
 
 export const AppDegreesDiv = styled.div`
-  position: absolute;
-  bottom: 50px;
-  right: 50px;
+  display: flex;
+  flex-direction:row;
+  @media (min-width: 950px) {
+    position: absolute;
+    bottom: 50px;
+    right: 50px;
+  }
 `;
 
 export const AppDegreesButton = styled.button`
