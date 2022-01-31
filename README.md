@@ -1,6 +1,12 @@
-# Getting Started with Create React App
+# Gradient
+
+
+[Visit site](https://dilemma16.github.io/gradient/)
+
+Remake of (GradientGenerator)[https://github.com/dilEMMA16/GradientGenerator], using React functional components + hooks vs class components
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+[Deploy docs](https://dev.to/yuribenjamin/how-to-deploy-react-app-in-github-pages-2a1f)
 
 ## Available Scripts
 
