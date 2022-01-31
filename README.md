@@ -1,5 +1,6 @@
 # Gradient
 
+![image](./public/gradient-screenshot.png)
 
 [Visit site](https://dilemma16.github.io/gradient/)
 
